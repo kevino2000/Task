@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Apprendre l'anglais gratuitement — A1 à C2 | English Coach</title>
+<meta name="description" content="Apprendre l'anglais gratuitement en ligne : cours A1 à C2, dictée anglaise, conjugaison, test de niveau international, vocabulaire SRS. Sans inscription, sans limite, 100% gratuit.">
+<meta name="keywords" content="apprendre l'anglais gratuitement, cours d'anglais gratuit, dictée anglaise, conjugaison anglaise, test niveau anglais, EF SET, CECRL, A1 A2 B1 B2 C1 C2, anglais en ligne">
+<meta name="author" content="Kevino Totozafy">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://english-coach.example/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Apprendre l'anglais gratuitement — A1 à C2 | English Coach">
+<meta property="og:description" content="Plateforme 100% gratuite pour apprendre l'anglais.">
+<meta property="og:locale" content="fr_FR">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎧</text></svg>">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "English Coach",
+  "url": "https://english-coach.example/",
+  "founder": {"@type":"Person","name":"Kevino Totozafy","birthPlace":"Fenerive Est, Madagascar","url":"https://matourguidemadagascar.com/Kevino.html","sameAs":["https://web.facebook.com/kevino.2000/"]},
+  "offers": {"@type":"Offer","price":"0","priceCurrency":"EUR"}
+}
+</script>
+
+<meta name="theme-color" content="#4f46e5">
+<script>try{var t=localStorage.getItem("edc.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <a href="#/parcours" class="logo">🎧 English <span>Coach</span></a>
+    <div class="header-actions">
+        <label class="speed-control" for="speechRate">
+            <span>Vitesse</span>
+            <input type="range" id="speechRate" min="0.5" max="1.2" step="0.05" value="0.82">
+        </label>
+        <div class="chip" id="streakChip" title="Jours d'étude consécutifs">🔥 0</div>
+        <div class="chip" id="xpChip" title="Points d'expérience">⭐ 0 XP</div>
+        <div class="level-badge">Niveau <strong id="headerLevel">A1</strong></div>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Changer de thème clair / sombre" title="Thème clair / sombre">🌙</button>
+    </div>
+</header>
+
+<main>
+
+<section class="hero">
+    <h1>Apprendre l'anglais gratuitement — du niveau A1 au C2</h1>
+    <p>Plateforme <strong>100 % gratuite</strong>, <strong>sans inscription</strong> et <strong>sans limite</strong>. Cours, dictée, conjugaison, vocabulaire et test de niveau international.</p>
+    <ul class="hero-badges">
+        <li>🎓 Niveaux CECRL A1 → C2</li>
+        <li>🎧 Écoute &amp; dictée</li>
+        <li>🧠 Répétition espacée</li>
+        <li>🏆 Test international</li>
+    </ul>
+</section>
+
+<div class="levels" id="levels"></div>
+
+<nav class="tabs">
+    <a class="tab active" href="#/parcours" data-tab="parcours">📚 Parcours</a>
+    <a class="tab" href="#/phrase-training" data-tab="phraseTraining">🎧 Phrase Training</a>
+    <a class="tab" href="#/dictee" data-tab="dictation">📝 Dictée</a>
+    <a class="tab" href="#/verbes" data-tab="verbes">🔤 Verbes</a>
+    <a class="tab" href="#/test-international" data-tab="testIntl">🏆 Test international</a>
+    <a class="tab" href="#/vocabulaire" data-tab="vocab">🧠 Vocabulaire</a>
+    <a class="tab" href="#/a-propos" data-tab="apropos">ℹ️ À propos</a>
+</nav>
+
+<!-- PARCOURS -->
+<section class="card practice-section active" id="parcours">
+    <div class="practice-header">
+        <h2>📚 Parcours pédagogique A1 → C2</h2>
+        <div class="stats">
+            <div class="stat">Niveau : <span id="parcoursLevel">—</span></div>
+            <div class="stat">Progression : <span id="parcoursProgressText">0%</span></div>
+        </div>
+    </div>
+    <p class="section-intro">Un programme structuré suivant le <strong>CECRL</strong>.</p>
+    <div id="parcoursDashboard"></div>
+    <div id="placementTest" class="hidden"></div>
+    <div id="lessonList"></div>
+    <div id="lessonViewer" class="hidden"></div>
+</section>
+
+<!-- PHRASE TRAINING -->
+<section class="card practice-section" id="phraseTraining">
+    <div class="practice-header">
+        <h2>🎧 Phrase Training — entraînement massif</h2>
+        <div class="stats">
+            <div class="stat">Phrase <span id="phraseNumber">1</span>/<span id="phraseTotal">200</span></div>
+            <div class="stat">Score : <span id="phraseScore">0</span></div>
+            <div class="stat">Sessions : <span id="phraseSessionCount">0</span></div>
+        </div>
+    </div>
+    <p class="section-intro">Des <strong>centaines de phrases</strong>, courtes au début puis plus longues, mélangées aléatoirement. Session <strong>illimitée</strong>. Chaque phrase juste te rapporte des <strong>XP</strong>.</p>
+
+    <div class="progress"><div class="progress-bar" id="phraseProgress"></div></div>
+
+    <div class="audio-icon-wrap">
+        <button class="audio-icon-btn" id="replayPhrase">
+            <svg class="headphone-icon" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                <path class="hp-band" d="M 45 80 Q 45 20 100 20 Q 155 20 155 80" fill="none" stroke-linecap="round"/>
+                <rect class="hp-cup" x="28" y="65" width="30" height="55" rx="15"/>
+                <rect class="hp-cup-inner" x="34" y="72" width="18" height="41" rx="9"/>
+                <rect class="hp-cup" x="142" y="65" width="30" height="55" rx="15"/>
+                <rect class="hp-cup-inner" x="148" y="72" width="18" height="41" rx="9"/>
+                <g class="hp-wave" stroke-linecap="round">
+                    <line x1="70" y1="84.5" x2="70" y2="99.5"/><line x1="75" y1="79.5" x2="75" y2="104.5"/>
+                    <line x1="80" y1="74.5" x2="80" y2="109.5"/><line x1="85" y1="69.5" x2="85" y2="114.5"/>
+                    <line x1="90" y1="64.5" x2="90" y2="119.5"/><line x1="95" y1="62" x2="95" y2="122"/>
+                    <line x1="100" y1="59.5" x2="100" y2="124.5"/><line x1="105" y1="62" x2="105" y2="122"/>
+                    <line x1="110" y1="64.5" x2="110" y2="119.5"/><line x1="115" y1="69.5" x2="115" y2="114.5"/>
+                    <line x1="120" y1="74.5" x2="120" y2="109.5"/><line x1="125" y1="79.5" x2="125" y2="104.5"/>
+                    <line x1="130" y1="84.5" x2="130" y2="99.5"/>
+                </g>
+            </svg>
+        </button>
+        <p class="audio-hint">Clique sur le casque pour réécouter</p>
+    </div>
+
+    <div class="word-inputs" id="phraseWordInputs"></div>
+    <div class="feedback" id="phraseFeedback"></div>
+
+    <div class="action-row">
+        <button class="ghost-btn hidden" id="showAnswerPhrase">👁️ Voir la réponse</button>
+        <button class="ghost-btn" id="skipPhrase">⏭️ Passer</button>
+        <button class="ghost-btn" id="shufflePhrase">🔄 Remélanger</button>
+    </div>
+</section>
+
+<!-- DICTÉE — version libre comme Word -->
+<section class="card practice-section" id="dictation">
+    <div class="practice-header">
+        <h2>📝 Dictée — mode école</h2>
+        <div class="stats">
+            <div class="stat">Niveau : <span id="dictLevel">A1</span></div>
+            <div class="stat">Meilleur : <span id="dictBest">—</span></div>
+            <div class="stat">Phrase <span id="dictCurrent">1</span>/<span id="dictTotal">10</span></div>
+        </div>
+    </div>
+    <p class="section-intro">Une <strong>vraie histoire</strong> qui se lit phrase par phrase, <strong>deux fois chacune</strong> (la 2<sup>e</sup> fois plus lentement). Écris librement ci-dessous : ton texte est <strong>sauvegardé automatiquement</strong>. À la correction, ton <strong>coach</strong> repère tes fautes et t'explique comment progresser (orthographe britannique et américaine acceptées).</p>
+
+    <div class="dict-modes" role="tablist" aria-label="Choix des dictées">
+        <button type="button" class="dict-mode active" data-mode="level" role="tab" aria-selected="true">📖 Histoires par niveau</button>
+        <button type="button" class="dict-mode" data-mode="naruto" role="tab" aria-selected="false">🍥 Saga Naruto <small id="narProgressTxt">0/36</small></button>
+    </div>
+
+    <div class="naruto-panel hidden" id="narutoPanel">
+        <p class="nar-summary" id="narSummary"></p>
+        <div class="nar-grid" id="narGrid"></div>
+        <label class="nar-auto"><input type="checkbox" id="narAuto" checked> Enchaîner automatiquement la dictée suivante après la correction</label>
+    </div>
+
+    <p class="dict-title" id="dictTitle">—</p>
+    <div class="dict-names hidden" id="dictNames"></div>
+
+    <div class="dict-player">
+        <div class="dict-controls">
+            <button class="dict-btn primary" id="dictPlay">▶️</button>
+            <button class="dict-btn" id="dictPrev">⏮️</button>
+            <button class="dict-btn" id="dictNext">⏭️</button>
+            <button class="dict-btn" id="dictReplay">🔁</button>
+            <button class="dict-btn danger" id="dictStop">⏹️</button>
+        </div>
+        <div class="dict-status" id="dictStatus">Appuie sur ▶️ pour démarrer</div>
+        <label class="dict-pause">
+            <span>Pause entre les lectures : <strong id="dictPauseLabel">4s</strong></span>
+            <input type="range" id="dictPause" min="1" max="10" step="1" value="4">
+        </label>
+        <label class="dict-voice">
+            <span>🗣️ Voix</span>
+            <select id="voiceSelect" aria-label="Choisir la voix"><option value="">Voix du navigateur</option></select>
+        </label>
+    </div>
+
+    <!-- Zone de saisie libre, comme un document Word -->
+    <textarea id="dictTextarea"
+              class="dict-free-textarea"
+              spellcheck="false"
+              autocorrect="off"
+              autocapitalize="off"
+              lang="en"
+              placeholder="Écris ici ce que tu entends…&#10;&#10;Tu peux aller à la ligne, corriger, réécouter. Astuce : Ctrl + Entrée pour vérifier."></textarea>
+
+    <div class="action-row">
+        <button class="primary-btn" id="dictCheck">✅ Vérifier ma dictée</button>
+        <button class="ghost-btn" id="dictReset">🔄 Recommencer</button>
+    </div>
+
+    <div class="feedback" id="dictFeedback"></div>
+
+    <div class="result" id="dictResult">
+        <div>🎯 Résultat</div>
+        <div class="final-score" id="dictFinalScore">0%</div>
+        <div id="dictDetails"></div>
+        <div id="dictErrorReview"></div>
+    </div>
+</section>
+
+<!-- VERBES -->
+<section class="card practice-section" id="verbes">
+    <div class="practice-header">
+        <h2>🔤 Verbes & Temps</h2>
+        <div class="stats">
+            <div class="stat">Temps étudiés : <span id="verbesProgress">0/12</span></div>
+        </div>
+    </div>
+    <p class="section-intro">Tous les temps anglais expliqués clairement.</p>
+
+    <div class="subtabs">
+        <button class="subtab active" data-subtab="overview">📊 Vue d'ensemble</button>
+        <button class="subtab" data-subtab="conjugator">🔧 Conjugueur</button>
+        <button class="subtab" data-subtab="irregular">⚡ Irréguliers</button>
+        <button class="subtab" data-subtab="cards">📖 Fiches</button>
+        <button class="subtab" data-subtab="vquiz">🎯 Exercices</button>
+    </div>
+
+    <div id="verbesContent"></div>
+</section>
+
+<!-- TEST INTERNATIONAL -->
+<section class="card practice-section" id="testIntl">
+    <div class="practice-header">
+        <h2>🏆 Test international type EF SET</h2>
+        <div class="stats">
+            <div class="stat">Meilleur score : <span id="bestIntlScore">—</span></div>
+        </div>
+    </div>
+    <p class="section-intro">Test <strong>gratuit</strong> inspiré du <strong>EF Standard English Test</strong>.</p>
+    <div id="testIntlContent"></div>
+</section>
+
+<!-- VOCABULAIRE -->
+<section class="card practice-section" id="vocab">
+    <div class="practice-header">
+        <h2>🧠 Vocabulaire — répétition espacée</h2>
+        <div class="stats">
+            <div class="stat">À réviser : <span id="vocabDueCount">0</span></div>
+            <div class="stat">Cartes : <span id="vocabTotalCount">0</span></div>
+        </div>
+    </div>
+    <p class="section-intro">Répétition espacée (Leitner 5 boîtes) : 1j → 3j → 7j → 14j → 30j.</p>
+    <div id="vocabPanel"></div>
+</section>
+
+<!-- À PROPOS -->
+<section class="card practice-section" id="apropos">
+    <h2>ℹ️ À propos — Apprendre l'anglais gratuitement</h2>
+
+    <article class="about-block">
+        <div class="about-avatar">👨🏾‍💻</div>
+        <div class="about-content">
+            <h3><a href="https://matourguidemadagascar.com/Kevino.html" target="_blank" rel="noopener" class="about-name-link">Kevino Totozafy</a></h3>
+            <p class="about-role">Créateur de la plateforme English Coach</p>
+            <p>Je m'appelle <strong><a href="https://matourguidemadagascar.com/Kevino.html" target="_blank" rel="noopener" class="about-inline-link">Kevino Totozafy</a></strong>, un jeune homme originaire de <strong>Madagascar</strong>, né à <strong>Fenerive Est</strong>.</p>
+            <p>Le but de cette plateforme est d'<strong>aider les personnes en difficulté</strong> qui veulent apprendre l'anglais mais qui sont bloquées par des applications <strong>payantes</strong> et <strong>limitées</strong>.</p>
+            <p>Ici, <strong>tout est gratuit</strong>, <strong>sans inscription obligatoire</strong>, <strong>sans limite</strong>. Si tu veux, connecte-toi avec Google pour <strong>enregistrer ta progression</strong> et la retrouver sur ton téléphone ou ton ordinateur.</p>
+            <a href="https://matourguidemadagascar.com/Kevino.html" target="_blank" rel="noopener" class="ghost-btn" style="display:inline-flex;margin-top:10px;text-decoration:none">
+                👤 En savoir plus sur Kevino →
+            </a>
+            <a href="https://web.facebook.com/kevino.2000/" target="_blank" rel="noopener" class="ghost-btn fb-btn" style="display:inline-flex;margin-top:10px;margin-left:8px;text-decoration:none">
+                📘 Facebook
+            </a>
+        </div>
+    </article>
+
+    <div class="about-grid">
+        <div class="about-card">
+            <h4>📞 Me contacter</h4>
+            <p>WhatsApp :</p>
+            <a class="contact-link whatsapp" href="https://wa.me/261381726043" target="_blank" rel="noopener">💬 +261 38 17 260 43</a>
+            <p style="margin-top:14px">Emails :</p>
+            <a class="contact-link" href="mailto:Kevinofils@gmail.com">✉️ Kevinofils@gmail.com</a>
+            <a class="contact-link" href="mailto:Totozafykevino@gmail.com">✉️ Totozafykevino@gmail.com</a>
+            <p style="margin-top:14px">Réseaux sociaux :</p>
+            <a class="contact-link facebook" href="https://web.facebook.com/kevino.2000/" target="_blank" rel="noopener">📘 Mon compte Facebook</a>
+        </div>
+
+        <div class="about-card">
+            <h4>💡 Suggestions d'amélioration</h4>
+            <p>Tu peux me suggérer des améliorations, signaler un bug ou proposer du nouveau contenu.</p>
+            <p>Cette plateforme évolue <strong>grâce à vous</strong>.</p>
+        </div>
+
+        <div class="about-card">
+            <h4>💼 Services proposés</h4>
+            <p>Je peux aussi concevoir pour vous :</p>
+            <ul class="services-list">
+                <li>🌐 Sites web (vitrine, portfolio, blog)</li>
+                <li>🏨 Sites pour <strong>hôtels</strong></li>
+                <li>🍽️ Sites pour <strong>restaurants</strong></li>
+                <li>🏫 Gestion d'<strong>établissements</strong></li>
+                <li>📱 Applications web sur mesure</li>
+            </ul>
+            <p>Contacte-moi pour un devis gratuit.</p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>🎧 English Coach</h4>
+            <p>Apprendre l'anglais gratuitement, de A1 à C2.</p>
+        </div>
+        <div class="footer-col">
+            <h4>📞 Contact</h4>
+            <a href="https://wa.me/261381726043" target="_blank" rel="noopener">💬 WhatsApp</a>
+            <a href="mailto:Kevinofils@gmail.com">✉️ Kevinofils@gmail.com</a>
+            <a href="mailto:Totozafykevino@gmail.com">✉️ Totozafykevino@gmail.com</a>
+            <a href="https://web.facebook.com/kevino.2000/" target="_blank" rel="noopener">📘 Facebook</a>
+        </div>
+        <div class="footer-col">
+            <h4>🌐 Navigation</h4>
+            <a href="#/parcours">📚 Parcours</a>
+            <a href="#/dictee">📝 Dictée</a>
+            <a href="#/verbes">🔤 Verbes</a>
+            <a href="#/test-international">🏆 Test</a>
+        </div>
+        <div class="footer-col">
+            <h4>👤 Créateur</h4>
+            <a href="https://matourguidemadagascar.com/Kevino.html" target="_blank" rel="noopener">Kevino Totozafy →</a>
+            <a href="https://web.facebook.com/kevino.2000/" target="_blank" rel="noopener">📘 Facebook de Kevino</a>
+        </div>
+    </div>
+    <p class="footer-credit">Conçu par <strong><a href="https://matourguidemadagascar.com/Kevino.html" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">Kevino Totozafy</a></strong> — Fenerive Est, Madagascar • 100 % gratuit</p>
+</footer>
+
+<script src="naruto-data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
